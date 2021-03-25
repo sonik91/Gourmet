@@ -1,0 +1,22 @@
+
+
+<div id="conteneur">
+  <div id="header">
+    <div id="iconCommentaire">{{avis.name.substr(0,1)}}</div>
+    <p id="nomClient">{{avis.name}}</p>
+  </div>
+
+  <div id="note">
+    <fa-icon [icon]="etoiles[0]"></fa-icon>
+    <fa-icon [icon]="etoiles[1]"></fa-icon>
+    <fa-icon [icon]="etoiles[2]"></fa-icon>
+    <fa-icon [icon]="etoiles[3]"></fa-icon>
+    <fa-icon [icon]="etoiles[4]"></fa-icon>
+
+    <p> {{dateComentaire}}</p>
+  </div>
+
+  <p>{{avis.comment}}</p>
+
+
+</div>

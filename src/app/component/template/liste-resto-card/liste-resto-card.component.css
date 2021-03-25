@@ -1,0 +1,44 @@
+.nameRestaurant{
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+}
+#sectionCardResto{
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.noteResto{
+  color: rgb(255, 123, 15);
+}
+
+.noteResto>.nombreVotes{
+  color: rgba(0,0,0,0.3);
+}
+
+.adresseResto{
+  color: rgba(0,0,0,0.6);
+  font-size: 0.8em;
+}
+
+h3{
+  margin-top: 0px;
+}
+
+.separateur{
+  width:100%;
+  border-top: solid 1px rgba(0,0,0,0.3);
+}
+
+#sectionCardResto{
+  display: flex;
+}
+
+.imgStreetView{
+  width:30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 10px;
+}

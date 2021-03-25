@@ -1,0 +1,121 @@
+#conteneur{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backdrop{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0,0,0,0.6);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+#modal{
+  background-color: white;
+  border: solid black 3px;
+  border-radius: 2ex 2ex;
+  width: 80%;
+  height: 80%;
+  z-index: 2;
+  padding: 0px 20px;
+  overflow-y: scroll;
+}
+
+#modal::-webkit-scrollbar { width: 0 !important }
+
+#header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#close{
+  font-size: 2em;
+  border-radius: 4ex 4ex;
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#close:hover{
+  background-color: rgba(0,0,0,0.1);
+}
+
+#imageStreeView{
+  width: 100%;
+  height: 20vh;
+  margin-top: 20px;
+}
+
+#imageStreeView>img{
+  width: 100%;
+  height: 100%;
+}
+
+#listeAvis{
+  width: 100%;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#titreListeAvis{
+  width: 100%;
+  text-align: center;
+}
+
+.avis{
+  width: 100%;
+  border-top: grey solid 1px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#votreAvis{
+  width: 95%;
+  padding-left: 2px;
+}
+
+
+#votreAvisTexte{
+  width: 100%;
+  margin-top: 5px;
+}
+
+#conteneurBoutonSubmit{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+#votreAvisButton{
+  border-radius: 1ex 1ex;
+  border-color: rgba(0,0,0,0);
+  color: white;
+  background-color: #1a73e8;
+  padding: 5px 20px;
+  font-weight: 700;
+}
+
+#votreAvisButton:disabled{
+  background-color: rgba(0,0,0,0.1);
+  color: gray;
+}
+
+.etoileVotreNote{
+  color: rgb(255, 123, 15);
+}

@@ -1,0 +1,45 @@
+<div id="conteneur">
+  <div id="backdrop"></div>
+  <div id="modal">
+    <div id="header">
+      <div></div>
+      <h1>{{resto.restaurantName}}</h1>
+      <div id="close"><fa-icon [icon]="faTime"></fa-icon></div>
+    </div>
+
+    <div id="imageStreeView">
+      <img src="https://maps.googleapis.com/maps/api/streetview?size={{tailleImage.width}}x{{tailleImage.height}}&location={{resto.lat}},{{resto.long}}&heading=151.78&pitch=-0.76&key=AIzaSyCqjeHEjl4HAuVpy0hrHthpu23mt5nln8Q" alt="image streetVieew de la rue du restaurant">
+    </div>
+
+    <app-detail-note *ngIf="detailNoteActif"></app-detail-note>
+
+    <h2 id="titreListeAvis">Liste des avis</h2>
+
+    <ul id="listeAvis">
+      <li class="avis" *ngFor="let avis of resto.ratings">
+        <app-liste-avis-card [avis] = "avis"></app-liste-avis-card>
+      </li>
+    </ul>
+
+    <form id="votreAvis" class="avis" (ngSubmit)="envoyerAvis(f)" #f="ngForm">
+      <div id="votreAvisNote">
+        <fa-icon class="etoileVotreNote" id="unEtoileVotreNote" [icon]="etoilesVotreNote[0]"></fa-icon>
+        <fa-icon class="etoileVotreNote" id="deuxEtoileVotreNote" [icon]="etoilesVotreNote[1]"></fa-icon>
+        <fa-icon class="etoileVotreNote" id="troisEtoileVotreNote" [icon]="etoilesVotreNote[2]"></fa-icon>
+        <fa-icon class="etoileVotreNote" id="quatreEtoileVotreNote" [icon]="etoilesVotreNote[3]"></fa-icon>
+        <fa-icon class="etoileVotreNote" id="cinqEtoileVotreNote" [icon]="etoilesVotreNote[4]"></fa-icon>
+      </div>
+
+      <label>Votre nom :</label> <input type="text" id='votreAvisNom' name="votreAvisNom" ngModel>
+      <textarea id="votreAvisTexte" name="votreAvisTexte" placeholder="Votre avis..." ngModel></textarea> <br/>
+      <div id="conteneurBoutonSubmit">
+        <button id="votreAvisButton" type="submit" disabled> Envoyer</button>
+      </div>
+    </form>
+
+
+
+
+  </div>
+
+</div>

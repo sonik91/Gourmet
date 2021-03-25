@@ -1,0 +1,6 @@
+<div id="map"></div>
+
+  <app-conteneur *ngIf="carte" [carte] = "carte"></app-conteneur>
+
+  <app-ajout-restaurant *ngIf="newResto.addRestoToggle" [adresse]="[newResto.adresse,carte]"></app-ajout-restaurant>
+

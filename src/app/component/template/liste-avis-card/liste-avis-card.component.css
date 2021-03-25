@@ -1,0 +1,36 @@
+#conteneur{
+  margin: 10px 0px;
+}
+#header{
+  display: flex;
+  align-items: center;
+}
+#header>p{
+  margin: 0px;
+}
+
+#iconCommentaire{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3ex 3ex;
+  background-color: orange;
+  color: white;
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+#note{
+  display:flex;
+  color: rgb(255, 123, 15);
+  align-items: center;
+}
+
+#note>p{
+  color: #70757a;
+  font-size: 0.8em;
+  margin-left: 10px;
+  margin-bottom: 0px;
+}

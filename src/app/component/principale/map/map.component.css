@@ -1,0 +1,23 @@
+#map{
+  width: 100vw;
+  height: 100vh;
+}
+
+app-conteneur{
+  width: 250px;
+  z-index: 2;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+}
+
+app-ajout-restaurant{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  width:100vw;
+  height: 100vh;
+}

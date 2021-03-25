@@ -1,0 +1,130 @@
+#global{
+  width:100%;
+  height:100%;
+  margin: 0px;
+  padding: 0px;;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#backdrop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#conteneur{
+  border: 2px black solid;
+  border-radius: 2ex 2ex;
+  background-color: white;
+  padding: 20px;
+  z-index: 2;
+}
+
+#header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header>h2{
+  font-size: 1.2em;
+}
+
+#iconExit{
+  width: 40px;
+  height: 40px;
+  border-radius: 4ex 4ex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+#iconExit:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#textInfo{
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.8em;
+}
+
+.champs{
+  display: flex;
+}
+
+.icon{
+  margin-right: 10px;
+}
+
+.renseignement>p{
+  margin: 0px;
+}
+
+.renseignement{
+  width: 100%;
+  margin-top: 5px;
+}
+
+.inputRenseignementNewResto{
+  width: 100%;
+  padding: 0px;
+  margin:0px;
+  border:none;
+}
+
+.inputRenseignementNewResto:focus{
+  outline: none;
+}
+.soulignementInput{
+  width: 100%;
+  height: 1px;
+  border-top: rgba(0, 0, 0, 0.4) solid 1px;
+}
+
+#buttonFormulaire{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#buttonFormulaire>button{
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-color: white;
+  color: grey;
+}
+
+#buttonFormulaire>button.active{
+  color: #1a73e8;
+}
+
+#buttonFormulaire>button.active:hover{
+  background-color: rgba(0,0,255,0.1);
+}
+
+#spinnerSubmit{
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  animation: rotateSpiner .6s infinite linear;
+}
+@keyframes rotateSpiner {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
+
+.cacher{
+  display: none!important;
+}
+

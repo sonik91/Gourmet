@@ -1,0 +1,34 @@
+<div id="global">
+  <div id="backdrop">
+  </div>
+  <form id="conteneur" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div id="header"><p></p><h2>Ajouter un restaurant</h2><div id="iconExit"><fa-icon [icon]="faTimes"></fa-icon></div></div>
+
+    <p id="textInfo">Veuillez fournir quelques informations sur ce lieu. Ce lieu sera visible publiquement.</p>
+
+    <div class="champs">
+      <div class="icon"><fa-icon [icon]="faMapMarkedAlt"></fa-icon></div>
+      <div class="renseignement">
+        <p>adresse*</p>
+        <input class="inputRenseignementNewResto" type="text" name="adresse" id="adresse"  [(ngModel)]="adresse[0]">
+        <div class="soulignementInput"></div>
+      </div>
+    </div>
+
+    <div class="champs">
+      <div class="icon"><fa-icon [icon]="faHome"></fa-icon></div>
+      <div class="renseignement">
+        <p>nom*</p>
+        <input class="inputRenseignementNewResto" type="text" name="name" id="name" placeholder="Ajouter un nom" ngModel>
+        <div class="soulignementInput"></div>
+      </div>
+    </div>
+
+    <div id = "buttonFormulaire">
+      <button id="buttonCancel" class="active">Annuler</button>
+      <button type="submit" id="buttonSubmit">Envoyer</button>
+      <fa-icon id="spinnerSubmit" class="cacher" [icon]="faSpinner"></fa-icon>
+    </div>
+
+  </form>
+</div>

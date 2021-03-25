@@ -1,0 +1,34 @@
+<div id="conteneur">
+  <ul id="listeResto">
+    <li id="sectionFiltre">
+      <h2>FILTRE</h2>
+      <label for="filtreNote">Notes :</label>
+      <select name="filtreNote" id="filtreNote" >
+        <option value="all">toutes les notes</option>
+        <option value="1">1. etoile</option>
+        <option value="2">2. etoiles</option>
+        <option value="3">3. etoiles</option>
+        <option value="4">4. etoiles</option>
+        <option value="5">5. etoiles</option>
+      </select>
+      <form id="conteneurSearchPlace" (ngSubmit)="searchPlace(f)" #f="ngForm">
+        <input type="text" name="inputSearchPlace" id="inputSearchPlace" placeholder="trouver un lieux" ngModel>
+        <button type="submit" id="buttonSearchPlace"><fa-icon [icon]="iconSearch"></fa-icon></button>
+      </form>
+    </li>
+    <li id="restosVide" *ngIf="listeRestoVisible.length === 0">
+      <p class="gras">Aucun résultat trouvé.</p>
+      <p class="leger">Pour afficher plus de résultats, essayez de faire un panoramique ou de zoomer sur la carte.</p>
+    </li>
+    <li class="restos" *ngFor="let resto of listeRestoVisible">
+      <app-liste-resto-card [resto]="resto"></app-liste-resto-card>
+    </li>
+    <li id="newResto">
+      <button id="newRestoButton" (click)="newRestoButton()">Ajouter un restaurant</button>
+    </li>
+  </ul>
+</div>
+
+<div id="toggle">
+  <span id="toggleArrow"></span>
+</div>

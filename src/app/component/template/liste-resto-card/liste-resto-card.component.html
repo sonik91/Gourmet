@@ -1,0 +1,21 @@
+<div class="separateur"></div>
+<div id="sectionCardResto" (click)="openModal()">
+  <div class="gauche">
+    <h3 class="nameRestaurant">{{resto.restaurantName}}</h3>
+    <p class="noteResto">{{resto.moyene}}/5
+      <span class="nombreEtoiles">
+        <fa-icon [icon]="etoiles[0]"></fa-icon>
+        <fa-icon [icon]="etoiles[1]"></fa-icon>
+        <fa-icon [icon]="etoiles[2]"></fa-icon>
+        <fa-icon [icon]="etoiles[3]"></fa-icon>
+        <fa-icon [icon]="etoiles[4]"></fa-icon>
+      </span>
+      <span class="nombreVotes">({{nombreVote}})</span>
+    </p>
+    <p class="adresseResto">{{resto.address}}</p>
+  </div>
+  <div class='imgStreetView'>
+    <img src="https://maps.googleapis.com/maps/api/streetview?size=80x80&location={{resto.lat}},{{resto.long}}&heading=151.78&pitch=-0.76&key=AIzaSyCqjeHEjl4HAuVpy0hrHthpu23mt5nln8Q" alt="image streetVieew de la rue du restaurant">
+  </div>
+</div>
+<div class="separateur"></div>

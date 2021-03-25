@@ -1,0 +1,106 @@
+#conteneur{
+  width: 100%;
+  height: 100%;
+}
+
+#listeResto{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#sectionFiltre{
+  padding: 10px;
+}
+#sectionFiltre>h2{
+  margin-top: 0;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#sectionFiltre>select:focus{
+  outline: none;
+}
+
+
+#restosVide{
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+#restosVide>p{
+  margin-top: 0px;
+  margin-left: 10px;
+}
+#restosVide>.gras{
+  font-size: 1.1em;
+}
+#restosVide>.leger{
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.8em;
+}
+
+#toggle{
+  width: 25px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  left: 250px;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+  border-left: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#toggleArrow{
+  width: 10px;
+  height: 10px;
+  border-right: solid 1px black;
+  border-top: solid 1px black;
+  transform: rotateZ(225deg);
+  transition: 0.5s;
+}
+
+#newResto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+#newRestoButton{
+  padding: 5px 10px;
+  background-color: #1A73E8;
+  color: white;
+  border: none;
+  border-radius: 1ex 1ex;
+  transition: 0.2s;
+}
+
+#newRestoButton:hover{
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#conteneurSearchPlace{
+  width: 100%;
+  border:rgba(0, 0, 0, 0.6) solid 1px;
+  border-radius: 1ex 1ex;
+  display: flex;
+  justify-content: space-between;
+}
+
+#inputSearchPlace{
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+#buttonSearchPlace{
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  color: #1A73E8;
+}
+

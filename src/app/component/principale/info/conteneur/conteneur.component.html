@@ -1,0 +1,5 @@
+<div id="conteneur">
+  <app-liste-resto class="child" *ngIf="carte" [carte]="carte"></app-liste-resto>
+</div>
+
+<app-detail-resto *ngIf="listeResto.modalDetailResto" ></app-detail-resto>

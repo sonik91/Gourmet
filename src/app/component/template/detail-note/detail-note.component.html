@@ -1,0 +1,27 @@
+<div id="detailNotes">
+  <h2>Détails des notes</h2>
+
+  <div id="conteneurDetailNote">
+    <div id="detailsNotePrecis">
+      <div class="ligneNombreNote" id="NombreNote5"><p>5</p><progress max="{{listeNote.nbNoteTotal}}" value="{{listeNote.cinqEtoile}}"></progress><p class="colorGris">({{listeNote.cinqEtoile}})</p></div>
+      <div class="ligneNombreNote" id="NombreNote4"><p>4</p><progress max="{{listeNote.nbNoteTotal}}" value="{{listeNote.quarteEtoile}}"></progress><p class="colorGris">({{listeNote.quarteEtoile}})</p></div>
+      <div class="ligneNombreNote" id="NombreNote3"><p>3</p><progress max="{{listeNote.nbNoteTotal}}" value="{{listeNote.troisEtoile}}"></progress><p class="colorGris">({{listeNote.troisEtoile}})</p></div>
+      <div class="ligneNombreNote" id="NombreNote2"><p>2</p><progress max="{{listeNote.nbNoteTotal}}" value="{{listeNote.deuxEtoile}}"></progress><p class="colorGris">({{listeNote.deuxEtoile}})</p></div>
+      <div class="ligneNombreNote" id="NombreNote1"><p>1</p><progress max="{{listeNote.nbNoteTotal}}" value="{{listeNote.unEtoile}}"></progress><p class="colorGris">({{listeNote.unEtoile}})</p></div>
+
+    </div>
+    <div id="detailNotesGlobal">
+
+      <p id="moyenne">{{listeNote.moyenne}}</p>
+      <div id="nombreEtoileMoyenne">
+        <fa-icon [icon]="etoiles[0]"></fa-icon>
+        <fa-icon [icon]="etoiles[1]"></fa-icon>
+        <fa-icon [icon]="etoiles[2]"></fa-icon>
+        <fa-icon [icon]="etoiles[3]"></fa-icon>
+        <fa-icon [icon]="etoiles[4]"></fa-icon>
+      </div>
+      <p id="nombreAvisGlobal">{{listeNote.nbNoteTotal}} avis</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,53 @@
+#detailNotes{
+  width: 100%;
+
+}
+
+#detailNotes>h2{
+  width: 100%;
+  text-align: center;
+}
+
+#conteneurDetailNote{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#detailsNotePrecis{
+margin-right: 50px;
+}
+
+.ligneNombreNote{
+  display: flex;
+  align-items: center;
+}
+
+.ligneNombreNote>progress{
+  margin: 0px 10px;
+
+}
+
+.ligneNombreNote>p{
+  margin: 0px;
+}
+
+.colorGris{
+  color: grey
+}
+
+#moyenne{
+  font-size: 4em;
+  margin: 0px;
+}
+
+#nombreEtoileMoyenne{
+  color: rgb(255, 123, 15);
+}
+
+#nombreAvisGlobal{
+  width: 100%;
+  text-align: center;
+  color: #70757a;
+}
+
