@@ -73,7 +73,7 @@ export class ListeRestoService {
 
       results.forEach((e)=>{
 
-        const newResto = {
+       const newResto = {
       "restaurantName": e.name,
       "address": e.vicinity,
       "lat": e.geometry.location.lat(),
@@ -83,6 +83,18 @@ export class ListeRestoService {
       "ratings": []
         }
 
+        service.getDetails({"placeId":e.place_id},(reponse,Statut)=>{//recuper plus de details afin d'obtenir les avis sur google place
+          if(Statut === 'OK'){
+          reponse.reviews.forEach((n)=>{
+            newResto.ratings.push({
+              "stars": n.rating,
+              "name": n.author_name,
+              "times": Number(n.time+"000"),//manque les trois dernier chiffre sur la réponse de google place
+              "comment": n.text
+            })
+          })
+          }
+        })
         listeRaiponse.push(newResto);
       });
       resolve(listeRaiponse);

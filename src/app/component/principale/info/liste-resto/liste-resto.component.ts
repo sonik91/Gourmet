@@ -18,11 +18,13 @@ export class ListeRestoComponent implements OnInit {
   iconSearch = faSearch;
   listeRestoVisible = [];
   listeVisible=true;
+  filtreNote = {"min": 1, "max": 5};
+
   ngOnInit(): void {
     this.initEvent();
-    document.getElementById("filtreNote").addEventListener("change",(e)=>{this.filtreNoteChange(e.target);})
+    document.getElementById("filtreNotePlus").addEventListener("change",(e)=>{this.filtreNoteChange(e.target,0);})
+    document.getElementById("filtreNoteMoins").addEventListener("change",(e)=>{this.filtreNoteChange(e.target,1);})
     document.getElementById("toggle").addEventListener("click",()=>{this.toggleListe()});
-
   }
 
   searchPlace(f){//recentrer la map sur un lieux different
@@ -60,7 +62,7 @@ export class ListeRestoComponent implements OnInit {
     setTimeout(()=>{//permet de laisser le temps de refraichir la liste lors d'un ajout de comentaire
       this.listeRestoVisible = this.ServiceListeResto.getListeRestoVisible();
 
-      this.filtreNoteChange(document.getElementById("filtreNote"));
+      this.filtreNoteResto();
     },10);
   }
 
@@ -85,17 +87,38 @@ toggleListe(){
 
 }
 
-filtreNoteChange(e){
+filtreNoteChange(e,minMax){//actulaiser la valeur du minimum et du maximum du filtre
   const value = e.value;
-  const TousRestoVisible = this.ServiceListeResto.getListeRestoVisible();
-  if(value === "all"){this.listeRestoVisible = TousRestoVisible; this.listeRestoVisible.forEach((e)=>{e.marker.setVisible(true);})}
-  else{
-    TousRestoVisible.forEach((e)=>{e.marker.setVisible(false);})
-    this.listeRestoVisible = TousRestoVisible.filter((e:any)=>{if(e.moyene>=value){return e}});
-    this.listeRestoVisible.forEach((e)=>{e.marker.setVisible(true);})
+  if(minMax){//minMax booleen 0 = min, 1 = max
+    this.filtreNote.min = value;
   }
+  else{
+    this.filtreNote.max = value
+  }
+  this.filtreNoteResto();
+}
 
+filtreNoteResto(){
+  const TousRestoVisible = this.ServiceListeResto.getListeRestoVisible();
 
+    TousRestoVisible.forEach((e)=>{e.marker.setVisible(false);})
+    this.listeRestoVisible = TousRestoVisible.filter((e:any)=>{
+      const moyene = this.calculMoyenne(e);
+      if(moyene>=this.filtreNote.min && moyene<=this.filtreNote.max){return e;}});
+    this.listeRestoVisible.forEach((e)=>{e.marker.setVisible(true);})
+}
+
+calculMoyenne(resto){//calcul de la moyenne d'un restaurant
+  let moyeneLocal = 0;
+  console.log(resto)
+  resto.ratings.map((e)=>{moyeneLocal+= e.stars});
+  moyeneLocal = moyeneLocal/resto.ratings.length;
+  if(resto.placeRating.length > 0){
+  return ((moyeneLocal*resto.ratings.length)+(resto.placeRating[0]*resto.placeRating[1]))/(resto.placeRating[1]+resto.ratings.length);
+  }
+  else{
+    return (moyeneLocal*resto.ratings.length)/resto.ratings.length;
+  }
 }
 
 }

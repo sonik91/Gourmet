@@ -2,15 +2,26 @@
   <ul id="listeResto">
     <li id="sectionFiltre">
       <h2>FILTRE</h2>
-      <label for="filtreNote">Notes :</label>
-      <select name="filtreNote" id="filtreNote" >
-        <option value="all">toutes les notes</option>
+
+
+      <label for="filtreNoteMoins">Notes min:</label>
+      <select name="filtreNoteMoins" id="filtreNoteMoins" >
         <option value="1">1. etoile</option>
         <option value="2">2. etoiles</option>
         <option value="3">3. etoiles</option>
         <option value="4">4. etoiles</option>
         <option value="5">5. etoiles</option>
       </select>
+
+      <label for="filtreNotePlus">Notes max:</label>
+      <select name="filtreNotePlus" id="filtreNotePlus">
+        <option value="1">1. etoile</option>
+        <option value="2">2. etoiles</option>
+        <option value="3">3. etoiles</option>
+        <option value="4">4. etoiles</option>
+        <option value="5" selected>5. etoiles</option>
+      </select>
+
       <form id="conteneurSearchPlace" (ngSubmit)="searchPlace(f)" #f="ngForm">
         <input type="text" name="inputSearchPlace" id="inputSearchPlace" placeholder="trouver un lieux" ngModel>
         <button type="submit" id="buttonSearchPlace"><fa-icon [icon]="iconSearch"></fa-icon></button>
